@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="CSS Layout Float">
+    <meta name="keywords" content="HTML, CSS">
+    <meta name="author" content="john">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Layout Float</title>
+    <style>
+        *
+        {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body
+        {
+            color: aliceblue;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .container
+        {
+            width: 100%;
+            margin: auto;
+        }
+
+        header
+        {
+            background-color: rgb(182, 6, 41);
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        .content
+        {
+            overflow: auto;
+        }
+
+        #content-page
+        {
+            background-color: rgba(235, 117, 141,0.5);
+        }
+
+        .left-sidebar
+        {
+            float: left;
+            width: 40%;
+            background-color: rgb(248, 32, 75);
+            height: 13.2333em;
+        }
+
+        .menu ul
+        {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            overflow: auto;
+            width: 100%;
+        }
+
+        .menu ul li
+        {
+           float: left;
+            width: 33.33%;
+            text-align: center;
+        }
+
+        .menu ul li a
+        {
+            text-decoration: none;
+            color: aliceblue;
+            display: block;
+            width: 100%;
+            padding: 10px 0;
+        }
+
+        .menu ul li a:hover
+        {
+            background-color:  rgba(148, 1, 30, 0.8);
+        }
+
+        .main-content
+        {
+            width: 60%;
+            float: left;
+            padding: 10px 0;
+        }
+
+        footer
+        {
+            background-color: rgb(128, 7, 31);
+            text-align: center;
+            padding: 10px;
+        }
+
+        .float-layout
+        {
+            border: 1px solid #999;
+            padding: 2px;
+            margin: 5px;
+        }
+
+        @media all and (max-width:1300px)
+        {
+            .container
+            {
+                width: 100%;
+            }
+
+            .left-sidebar
+            {
+                width: 100%;
+                background-color: rgb(252, 9, 58);
+                height: auto;
+            }
+
+            .main-content
+            {
+                width: 100%;
+                background-color: crimson;
+               
+            }
+        }
+
+        #header-flexBox
+        {
+            width: 100%;
+            background-color: rgb(255, 60, 99);
+        }
+
+        .menu-flexBox
+        {
+            width: 40%;
+            background-color: rgb(253, 109, 136);
+            height: 13.2333em;
+        }
+
+        .menu-flexBox ul
+        {
+            list-style-type: none;
+            display: flex;
+            width: 100%;
+        }
+
+        .menu-flexBox ul li
+        {
+            width: 33.33%;
+        }
+
+        .menu-flexBox ul li a
+        {
+            text-decoration: none;
+            color: aliceblue;
+            display: block;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        .menu-flexBox ul li a:hover
+        {
+            background-color: rgba(226, 4, 48, 0.8);
+        }
+
+        .main-content-flexBox
+        {
+            width: 60%;
+            background-color: rgb(255, 142, 164);
+            padding: 10px 0;
+        }
+
+        .footer-flexbox
+        {
+            width: 100%;
+            background-color: rgb(219, 5, 48);
+        }
+
+        .flexbox-layout
+        {
+            display: flex;
+            width: 100%;
+            flex-wrap: wrap;
+            border: 1px solid #999;
+            padding: 2px;
+            color: aliceblue;
+        }
+
+        @media all and (max-width:1300px)
+        {
+            .menu-flexBox
+            {
+                width:100%;
+                height: auto;
+            }
+
+            .main-content-flexBox
+            {
+                width: 100%;
+            }
+
+            .flexbox-layout
+        {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .image
+        {
+            background-image: url('../ASSESTS/media/images/large_images/ocean2.jpg');
+            background-size: cover;
+            height: 7vh;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+    }
+
+    </style>
+</head>
+<body>
+   <div class="float-layout">
+    <header id="header">
+        <div class="container">
+            <div class="head">
+                <h1>Cities</h1>
+            </div>
+        </div>
+    </header>
+
+    <section id="content-page">
+        <div class="container">
+            <div class="content">
+                <aside class="left-sidebar">
+                    <div class="menu">
+                        <ul>
+                            <li><a href="#home">Home</a></li>
+                            <li><a href="#profile">Profile</a></li>
+                            <li><a href="#contactus">Contact Us</a></li>
+                        </ul>
+                    </div>
+                </aside>
+
+                <section class="main-content">
+                    <h2>London</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni aperiam assumenda quo, esse debitis enim tenetur nostrum non maxime doloremque.</p>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum voluptate adipisci distinctio eligendi reprehenderit alias!</p>
+                </section>
+            </div>
+        </div>
+    </section>
+
+    
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <h3>footer</h3>
+            </div>
+        </div>
+    </footer>
+   </div>
+
+   <div class="flexbox-layout">
+        <header id="header-flexBox">
+            <h1>Cities</h1>
+        </header>
+
+        <div class="menu-flexBox">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#profile">Profile</a></li>
+                <li><a href="#contactus">Contact Us</a></li>
+            </ul>
+        </div>
+
+        <section class="main-content-flexBox">
+            <h2>London</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni aperiam assumenda quo, esse debitis enim tenetur nostrum non maxime doloremque.</p>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum voluptate adipisci distinctio eligendi reprehenderit alias!</p>
+        </section>
+    
+        <footer class="footer-flexbox">
+            <h3>footer</h3>
+        </footer>
+</div>
+<div class="image">
+
+</div>
+</body>
+</html>
